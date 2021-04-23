@@ -22,6 +22,7 @@ class App extends BaseConfig
 	|
 	*/
 	public $baseURL = 'http://chikaralife.org/';
+	#public $baseURL = 'http://localhost/ChikaraBlog/';
 
 	/*
 	|--------------------------------------------------------------------------
