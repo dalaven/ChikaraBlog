@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link  rel="icon" href="<?= base_url('/public/assets/images/chikara logo.png'); ?>" type="image/png" />
+        <link  rel="icon" href="<?= base_url('/assets/images/chikara logo.png'); ?>" type="image/png" />
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
         
@@ -59,7 +59,7 @@
         <section >
             <div class="overlay-wcs"></div>
             <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-              <source src="<?= base_url(ASSETS_BASE_URL.'/videos/definitivo.mp4'); ?>" type="video/mp4">
+              <source src="<?= base_url('/assets/videos/definitivo.mp4'); ?>" type="video/mp4">
             </video>
             <div class="container h-100">
               <div class="d-flex h-100 text-center align-items-center">

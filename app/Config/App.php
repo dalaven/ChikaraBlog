@@ -21,9 +21,8 @@ class App extends BaseConfig
 	| environments.
 	|
 	*/
-	//public $baseURL = 'http://localhost/chikarablog';
-	//public $baseURL = 'http://localhost:8080';
-	public $baseURL = 'http://chikaralife.org';
+	public $baseURL = 'http://chikaralife.org'; //No modifiquen esta variable usen el archivo .env para su entorno local esto es para que no interfiera con el servidor
+	
 	/*
 	|--------------------------------------------------------------------------
 	| Index File

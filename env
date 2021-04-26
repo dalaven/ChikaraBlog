@@ -14,13 +14,15 @@
 # ENVIRONMENT
 #--------------------------------------------------------------------
 
-# CI_ENVIRONMENT = production
+# CI_ENVIRONMENT = development
 
 #--------------------------------------------------------------------
 # APP
 #--------------------------------------------------------------------
 
-# app.baseURL = ''
+#aquí coloquen su variable de entorno, recuerden duplicar este archivo con un punto al inicio .env
+#pueden usar 2 metodos aquí por ejemplo "localhost/ChikaraBlog/public" o crear un virtual host aquí les da mas detalle https://codeigniter.com/user_guide/installation/running.html#hosting-with-apache 
+app.baseURL = 'http://chikaralife.org'
 # app.forceGlobalSecureRequests = false
 
 # app.sessionDriver = 'CodeIgniter\Session\Handlers\FileHandler'
