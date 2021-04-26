@@ -21,7 +21,7 @@ class App extends BaseConfig
 	| environments.
 	|
 	*/
-	public $baseURL = 'http://chikaralife.org'; //No modifiquen esta variable usen el archivo .env para su entorno local esto es para que no interfiera con el servidor
+	public $baseURL = 'http://chikaralife.org'; //Esta variable en el servidor ya no afecta y si no quieren modificarla a cada rato y evitar tantos merge que estan haciendo usen el .env
 	
 	/*
 	|--------------------------------------------------------------------------
