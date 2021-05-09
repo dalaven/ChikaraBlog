@@ -5,8 +5,9 @@
 	"homepage": "https://codeigniter.com",
 	"license": "MIT",
 	"require": {
-		"php": ">=7.2",
-		"codeigniter4/framework": "^4"
+		"php": "^7.3 || ^8.0",
+		"codeigniter4/framework": "^4",
+		"dalaven/orm-ci4": "*"
 	},
 	"require-dev": {
 		"fzaninotto/faker": "^1.9@dev",
