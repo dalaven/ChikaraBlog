@@ -1,0 +1,69 @@
+@breakpoint: 800px;
+@breakpoint1: @breakpoint + 1;
+@mobile: (max-width: @breakpoint);
+@desktop: (min-width: @breakpoint1);
+
+:root {
+	--action-bg-primary: var(--main-color);
+	--action-bg-secondary: #666;
+	--action-bg-critical: #900;
+	--action-bg-alt: #666;
+	--action-border-primary: 1px solid #555;
+	--action-border-secondary: 1px solid #555;
+	--action-border-critical: 1px solid #a00;
+	--action-border-alt: 1px solid #555;
+	--action-fg: #fff;
+	--action-icon-width: 40px;
+	--action-icon-compact-width: 28px;
+	--action-icon-compact-height: 28px;
+	--action-icon-bg-size: 60% auto;
+	--action-height: 50px;
+	--action-radius: 50px;
+
+	--backdrop-bg: fade(#000, 50);
+	--border-color: #bbb;
+
+
+	--header-height: 15px;
+	--header-padding: 15px;
+
+	--icon-size: 1em;
+	--icon-input-size: 20px;
+	--icon-bg-size: contain;
+
+	--input-border: 1px solid #bbb;
+	--input-height: 36px;
+	--input-label-color: var(--text-mute-color);
+	--input-pad: 10px;
+	--input-radius: 5px;
+
+	--main-color: @main-color;
+
+	--pad-s: 5px;
+	--pad-m: 10px;
+	--pad-l: 20px;
+	--pad-xl: 30px;
+
+	--panel-pad-s: 5px;
+	--panel-pad-m: 10px;
+	--panel-pad-l: 20px;
+	--panel-bg-color: #fff;
+	--panel-radius-s: 2px;
+	--panel-radius-m: 5px;
+	--panel-radius-l: 10px;
+	--panel-shadow-s: var(--shadow-s);
+	--panel-shadow-m: var(--shadow-m);
+	--panel-shadow-l: var(--shadow-l);
+
+	--separator-border: 1px solid #bbb;
+
+	--shadow-s: 0 2px 5px fade(#000, 20);
+	--shadow-m: 0 5px 10px fade(#000, 20);
+	--shadow-l: 0 10px 30px fade(#000, 20);
+
+	--table-border-head: 1px solid #bbb;
+	--table-border-row: 1px solid #bbb;
+
+	--text-critical-color: #900;
+	--text-mute-color: #666;
+}
