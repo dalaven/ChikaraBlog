@@ -1,0 +1,66 @@
+.has-icon() {
+
+	&::before {
+		content: "";
+		display: inline-block;
+		width: var(--icon-size);
+		height: var(--icon-size);
+		margin-right: var(--icon-margin);
+		background-image: var(--icon);
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		background-size: var(--icon-bg-size);
+		vertical-align: middle;
+	}
+}
+
+.has-icon-after() {
+
+	&::after {
+		content: "";
+		display: inline-block;
+		width: var(--icon-size);
+		height: var(--icon-size);
+		margin-left: var(--icon-margin);
+		background-image: var(--icon);
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		background-size: var(--icon-bg-size);
+		vertical-align: middle;
+	}
+}
+
+.icon(@name) {
+	--icon: url("images/icon-@{name}.svg");
+}
+
+.declare-icon(@name) {
+	@selector: ~'[data-icon="@{name}"]';
+
+	@{selector} {
+		.icon(@name);
+	}
+}
+
+.declare-icon-after(@name) {
+	@selector: ~'[data-icon-after="@{name}"]';
+
+	@{selector} {
+		.icon(@name);
+	}
+}
+
+[data-icon] {
+	.has-icon;
+}
+
+[data-icon-after] {
+	.has-icon-after;
+}
+
+.declare-icon("culture");
+.declare-icon("flag");
+.declare-icon("temple");
+//.declare-icon("w/E");
+
+//.declare-icon-after("w/e");

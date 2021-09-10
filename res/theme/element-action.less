@@ -1,0 +1,104 @@
+.action() {
+	--icon-bg-size: var(--action-icon-bg-size);
+	width         : 100%;
+	height        : var(--action-height);
+	line-height   : var(--action-height);
+	margin        : 0;
+	border        : var(--action-border);
+	border-radius : var(--action-radius);
+	background    : var(--action-bg);
+	color         : var(--action-fg);
+	outline       : none;
+
+	--icon-size   : 1em;
+	--icon-bg-size: contain;
+	--icon-margin : 0.5em;
+	padding       : 0 var(--pad-l);
+
+	&[data-icon]:not(.icon) {
+		.action-with-icon;
+	}
+}
+
+.action-primary() {
+	--action-bg    : var(--action-bg-primary);
+	--action-border: var(--action-border-primary);
+}
+
+.action-secondary() {
+	--action-bg    : var(--action-bg-secondary);
+	--action-border: var(--action-border-secondary);
+}
+
+.action-critical() {
+	--action-bg    : var(--action-bg-critical);
+	--action-border: var(--action-border-critical);
+}
+
+.action-alt() {
+	--action-bg    : var(--action-bg-alt);
+	--action-border: var(--action-border-alt);
+}
+
+.action-icon() {
+	--icon-size   : 100%;
+	--icon-bg-size: var(--action-icon-bg-size);
+	position      : relative;
+	width         : var(--action-icon-width);
+	padding       : 0;
+	font-size     : 0;
+
+	&::before {
+		display : block;
+		position: absolute;
+		top     : 0;
+		left    : 0;
+	}
+}
+
+.action-icon(@name) {
+	.action-icon;
+	.has-icon;
+	.icon(@name);
+}
+
+.action-with-icon() {
+	padding-left: var(--pad-l);
+}
+
+.action-with-icon(@name) {
+	.action-with-icon;
+	.has-icon;
+	.icon(@name);
+}
+
+.action-icon-inverted() {
+
+	&::before {
+		filter: invert(100%);
+	}
+}
+
+.action {
+	.action;
+
+	&.primary {
+		.action-primary;
+	}
+
+	&.secondary {
+		.action-secondary;
+	}
+
+	&.critical {
+		.action-critical;
+	}
+
+	&.alt {
+		.action-alt;
+	}
+
+	&.icon {
+		.action-icon;
+	}
+}

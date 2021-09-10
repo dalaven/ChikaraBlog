@@ -1,0 +1,79 @@
+#home-view {
+    @extra-screen: 80px;
+
+    .home-banner {
+        background-image: url('../../res/images/home-back.png');
+        background-size: cover;
+        background-position: 0%;
+
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: calc(100% + @extra-screen);
+            mix-blend-mode: multiply;
+        }
+
+        &::before {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        &::after {
+            background-color: #C92121;
+        }
+
+        height: calc(100vh + @extra-screen);
+        width: 100vw;
+
+        margin-bottom: -@extra-screen;
+    }
+
+    .about {
+        position: relative;
+
+        .title {
+            height: @extra-screen;
+            font-weight: bold;
+            font-size: 40px;
+            line-height: 45px;
+            text-align: center;
+            text-transform: uppercase;
+            color: white;
+        }
+
+        .content {
+            display: flex;
+            gap: 100px;
+            margin: 0 200px;
+
+            article {
+                font-size: 16px;
+                line-height: 27px;
+                color: #727475;
+
+
+                span {
+                    margin: auto;
+                    text-align: center;
+
+                    &::before {
+                        height: 100px;
+                        width: 100px;
+
+                    }
+                }
+
+                h1 {
+                    font-weight: bold;
+                    font-size: 22px;
+                    line-height: 25px;
+                    color: #727475;
+                }
+            }
+        }
+    }
+}
