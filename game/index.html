@@ -1,0 +1,104 @@
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link  rel="icon" href="chikara_logo.png" type="image/png" />
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <title>Juego Chikara</title>
+    <!--<link href="index.css" rel="stylesheet">-->
+</head>
+
+<body>
+
+    <h3>Prototipo juego de Memoria By: Chikara</h3>
+
+
+    <div class="parejas">
+        <input name="number" class="number" type="number" min="4" max="40" value="5">
+        <button class="start">Reinicar</button>
+    </div>
+
+
+    <div class="board">
+
+    </div>
+
+
+
+
+    <script src="game.js"></script>
+    <style>
+        body {
+            background-color: red;
+        }
+
+        .parejas {
+            margin: 10px 0;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            border: 0;
+            border-bottom: 1px solid #000;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+
+            -webkit-appearance: none;
+        }
+
+        .start {
+            padding: 10px;
+            background-color: white;
+            color: black;
+            border: 2px solid #000;
+        }
+
+        .board {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 20px;
+        }
+
+        .card {
+            border-radius: 20px;
+            background-color: #fff;
+            height: 150px;
+            width: auto;
+
+            display: table;
+            text-align: center;
+            font-size: 2.5vw;
+        }
+
+        .text {
+            border-radius: 20px;
+            display: table-cell;
+            vertical-align: middle;
+            border: black 1px solid;
+
+        }
+
+        .correct {
+            background: #4CAF50;
+        }
+
+        .open,
+        .correct {
+            box-shadow: inset 3px 3px 1px 1px black;
+        }
+
+        .hidden {
+            font-size: 0 !important;
+            box-shadow: 5px 5px 2px 2px black;
+            background: url('chikara_logo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
+</body>
+
+
+</html>
