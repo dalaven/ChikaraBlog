@@ -5,7 +5,9 @@
         background-image: url('../../res/images/home-back.png');
         background-size: cover;
         background-position: 0%;
-
+        height: calc(100vh + @extra-screen);
+        width: 100vw;
+        margin-bottom: -@extra-screen;
 
         &::before,
         &::after {
@@ -14,7 +16,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: calc(100% + @extra-screen);
+            height: calc(100vh + @extra-screen);
             mix-blend-mode: multiply;
         }
 
@@ -26,10 +28,6 @@
             background-color: #C92121;
         }
 
-        height: calc(100vh + @extra-screen);
-        width: 100vw;
-
-        margin-bottom: -@extra-screen;
     }
 
     .about {
@@ -46,24 +44,25 @@
         }
 
         .content {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 100px;
-            margin: 0 200px;
+            margin: 70px 200px;
 
             article {
+                margin-top: 20px;
                 font-size: 16px;
                 line-height: 27px;
                 color: #727475;
 
-
                 span {
                     margin: auto;
                     text-align: center;
+                    display: block;
 
                     &::before {
                         height: 100px;
                         width: 100px;
-
                     }
                 }
 
@@ -72,8 +71,97 @@
                     font-size: 22px;
                     line-height: 25px;
                     color: #727475;
+                    margin: 40px 0 20px;
                 }
             }
         }
+    }
+
+    .twitch {
+        min-height: 700px;
+        background-image: url('../../res/images/fondo_twitch.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .youtube {
+        min-height: 650px;
+        background: #FF0000;
+        text-align: center;
+
+        iframe {
+            margin: 60px auto 45px;
+            width: 926px;
+            height: 549px;
+        }
+    }
+
+    .contact {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-evenly;
+        gap: 100px;
+        padding: 50px 300px;
+
+
+        h3 {
+            font-family: Cousine;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 23px;
+            line-height: 26px;
+            text-transform: uppercase;
+
+            color: #000;
+        }
+
+        img {
+            margin: 10px auto 20px;
+            height: 200px;
+        }
+
+        .form {
+            width: 500px;
+
+            form {
+                display: inline-grid;
+                width: inherit;
+
+                label {
+                    font-family: Cousine;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 16px;
+                    line-height: 18px;
+
+                    color: #000000;
+                    margin: 10px 0;
+                }
+
+                input,
+                textarea {
+                    width: 100%;
+                    background: #FFF;
+                    border: 1px solid #000000;
+                    box-sizing: border-box;
+                    border-radius: 5px;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+
+    footer {
+        background: #CFD8DC;
+        padding: 10px 0 20px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        text-align: center;
+
+
+        color: #000000;
     }
 }

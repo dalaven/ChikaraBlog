@@ -7,13 +7,14 @@ define([
 	return {
 		template: html,
 		data() {
+			return{
+			}
 		
 		},
 		methods: {
 			
 		},
 		async created() {
-
 		}
 	};
 });

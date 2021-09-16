@@ -1,9 +1,12 @@
 define([
 	"text!./index.html",
-	"components/menu",
+	"components/menu"
 ], (html, Menu) => {
 	return {
 		template: html,
+		components: {
+			Menu
+		},
 		data() {
 			return {
 
@@ -16,10 +19,6 @@ define([
 
 		},
 		created() {
-
 		},
-        components: {
-            Menu
-        }
 	};
 });

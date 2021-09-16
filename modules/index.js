@@ -7,7 +7,6 @@ define([
 			return {	
                 welcomeJ:"ようこそ",
                 welcomeE:"Bienvenidos!"
-
 			};
 		},
 		computed: {
