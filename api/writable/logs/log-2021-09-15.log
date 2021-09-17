@@ -1,0 +1,10 @@
+CRITICAL - 2021-09-15 20:27:36 --> You must set the database table to be used with your query.
+#0 C:\Apache24\htdocs\ChikaraBlog\api\vendor\codeigniter4\framework\system\Model.php(1237): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\Apache24\htdocs\ChikaraBlog\api\vendor\codeigniter4\framework\system\Model.php(1764): CodeIgniter\Model->builder()
+#2 C:\Apache24\htdocs\ChikaraBlog\api\app\Models\ORMModel.php(36): CodeIgniter\Model->__get('prefixField')
+#3 C:\Apache24\htdocs\ChikaraBlog\api\app\Controllers\Home.php(10): App\Models\ORMModel->__construct()
+#4 C:\Apache24\htdocs\ChikaraBlog\api\vendor\codeigniter4\framework\system\CodeIgniter.php(890): App\Controllers\Home->__construct()
+#5 C:\Apache24\htdocs\ChikaraBlog\api\vendor\codeigniter4\framework\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->createController()
+#6 C:\Apache24\htdocs\ChikaraBlog\api\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Apache24\htdocs\ChikaraBlog\api\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}

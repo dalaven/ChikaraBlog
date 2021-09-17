@@ -1,0 +1,10 @@
+CRITICAL - 2021-04-25 20:45:31 --> Use of undefined constant ASSETS_BASE_URL - assumed 'ASSETS_BASE_URL' (this will throw an Error in a future version of PHP)
+#0 C:\Apache24\htdocs\ChikaraBlog\app\Views\welcome_message.php(62): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Use of undefine...', 'C:\\Apache24\\htd...', 62, Array)
+#1 C:\Apache24\htdocs\ChikaraBlog\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\Apache24\\htd...')
+#2 C:\Apache24\htdocs\ChikaraBlog\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('welcome_message', Array, true)
+#3 C:\Apache24\htdocs\ChikaraBlog\app\Controllers\Home.php(7): view('welcome_message')
+#4 C:\Apache24\htdocs\ChikaraBlog\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Home->index()
+#5 C:\Apache24\htdocs\ChikaraBlog\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\Apache24\htdocs\ChikaraBlog\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Apache24\htdocs\ChikaraBlog\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
