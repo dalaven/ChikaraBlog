@@ -11,6 +11,7 @@ define([
 		routes: [
 			{ name: "index", path: "/", component: m("index"), meta: { title: '' } },
 			{ name: "home", path: "/home", component: m("home/index"), meta: { title: 'Home' } },
+			{ name: "game", path: "/games", component: m("games/index"), meta: { title: 'Juegos' } },
 		]
 	});
 

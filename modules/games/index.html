@@ -1,0 +1,17 @@
+<div class="games-view">
+    <h1>CHIKARA GAMES</h1>
+    <br>
+    <br>
+    <br>
+    <div class="list-games" v-if="!game">
+        <div class="point" @click="game = 'memory'">
+            Memoria
+        </div>
+    </div>
+    <br>
+    <br>
+    <component :is="game" v-else>
+
+    </component>
+
+</div>
