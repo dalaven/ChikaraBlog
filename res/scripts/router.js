@@ -9,8 +9,9 @@ define([
 	const router = VueRouter.createRouter({
 		history: VueRouter.createWebHashHistory(),
 		routes: [
-			{ name: "index", path: "/", component: m("index"), meta: { title: '' } },
-			{ name: "home", path: "/home", component: m("home/index"), meta: { title: 'Home' } },
+			//{ name: "index", path: "/", component: m("index"), meta: { title: '' } },
+			{ name: "home", path: "/", component: m("home/index"), meta: { title: 'Home' } },
+			{ name: "register", path: "/register", component: m("enroll/index"), meta: { title: 'Inscripción' } },
 			{ name: "game", path: "/games", component: m("games/index"), meta: { title: 'Juegos' } },
 		]
 	});

@@ -1,11 +1,13 @@
 <div class="menu">
-    <div class="logo">
+    <div class="logo" @click="$router.push({name: 'home'})">
         <img src="res/images/chikara_logo.png" alt="">
     </div>
     <nav>
         <ul>
             <li class="box">Nosotros</li>
-            <li>Registro</li>
+            <li>
+                <div @click="$router.push({name: 'register'})">Registro</div>
+            </li>
         </ul>
     </nav>
 </div>

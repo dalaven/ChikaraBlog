@@ -10,18 +10,23 @@ class ORMModel extends Model
     protected $useTimestamps = true;
     protected $user_id = null;
 
+    protected $beforeInsertActive = false;
+    protected $beforeUpdateActive = false;
+
     protected $beforeInsert = ['beforeInsert'];
     protected $beforeUpdate = ['beforeUpdate'];
 
     public function beforeInsert(array $data)
     {
-        $data['data'][$this->prefixField . '_created_by'] = $this->user_id;
+        if($this->beforeInsertActive){
+            $data['data'][$this->prefixField . '_created_by'] = $this->user_id;
+        }
         return $data;
     }
 
     public function beforeUpdate(array $data)
     {
-        if ($this->user_id != null) {
+        if ($this->user_id != null && $this->beforeUpdateActive) {
             $data['data'][$this->prefixField . '_updated_by'] = $this->user_id;
         }
         return $data;
