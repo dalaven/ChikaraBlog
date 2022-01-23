@@ -29,11 +29,11 @@ class Enrollment extends BaseController
 
             $message = "<html>Cordial saludo de parte de ChikaraOficial,
             <br>
-            Mediante este correo extendemos nuestros agradecimientos por su interés en nuestro cursos básicos del idioma japonés, así mismo los invitamos a conectarse el día sábado 29 de enero a las 6.00pm Colombia a nuestro live por Twitch, YouTube o Facebook, en donde abarcaremos toda la información de nuestros cursos y responderemos todas sus inquietudes.
+            Mediante este correo extendemos nuestros agradecimientos por su interés en nuestros cursos básicos del idioma japonés, así mismo los invitamos a conectarse el día sábado 29 de enero a las 6.00pm Colombia a nuestro live por Twitch, YouTube o Facebook, en donde abarcaremos toda la información de nuestros cursos y responderemos todas sus inquietudes.
             <br>
             ¡Los esperamos!</hmtl>";
             $email = \Config\Services::email();
-            $email->setFrom('matriculas@chikaraoficial.org', 'Titulo');
+            $email->setFrom('matriculas@chikaraoficial.org', 'Pre-inscripción chikara');
             $email->setTo($data['USER_email']);
             $email->setSubject('Asunto');
             $email->setMessage($message);

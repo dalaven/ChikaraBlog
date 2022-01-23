@@ -6,17 +6,17 @@
             <img src="res/images/vector.png" alt="" class="vector">
             <div class="content">
                 <img src="res/images/chikara_name.png" alt="" class="name">
-                <p class="text">Somos comunidad juvenil que desarrolla conocimientos sobre
+                <p class="text">Somos una comunidad juvenil que desarrolla conocimientos sobre
                     la cultura japonesa.</p>
             </div>
             <img src="res/images/vector.png" alt="" class="vector-inverse">
 
             <div class="social">
-                <img src="res/images/facebook.svg" alt="">
-                <img src="res/images/discord.svg" alt="">
-                <img src="res/images/insta.svg" alt="">
-                <img src="res/images/youtube.svg" alt="">
-                <img src="res/images/gmail.svg" alt="">
+                <img src="res/images/facebook.svg" alt="" @click="openLink('fb')">
+                <!--<img src="res/images/discord.svg" alt="">-->
+                <img src="res/images/insta.svg" alt=""  @click="openLink('ig')">
+                <img src="res/images/youtube.svg" alt=""  @click="openLink('yt')">
+                <!--<img src="res/images/gmail.svg" alt="">-->
             </div>
 
         </div>
@@ -74,14 +74,19 @@
             <p>chikara.organización@gmail.com</p>
         </div>
         <div class="form">
-            <form action="">
-                <label for="">Nombre</label>
-                <input type="text">
-                <label for="">Correo electrónico</label>
-                <input type="text">
-                <label for="">Texto</label>
-                <textarea rows="5"></textarea>
-            </form>
+            <!--
+
+                <form action="">
+                    <label for="">Nombre</label>
+                    <input type="text">
+                    <label for="">Correo electrónico</label>
+                    <input type="text">
+                    <label for="">Texto</label>
+                    <textarea rows="5"></textarea>
+                    <button > Enviar</button>
+                </form>
+            -->
+            
         </div>
     </section>
 

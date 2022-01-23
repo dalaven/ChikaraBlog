@@ -8,16 +8,26 @@
             <div class="field">
                 <label for="">Nombre</label>
                 <input type="text" v-model="data.USER_name" placeholder=""
-                    required>
+                required>
             </div>
             <div class="field">
                 <label for="">Apellido</label>
                 <input type="text" v-model="data.USER_lastname" placeholder=""
-                    required>
+                required>
             </div>
             <div class="field">
-                <label for="">Correo electrónico</label>
-                <input type="text" v-model="data.USER_email" placeholder=""
+                <label for="">Tipo de identificación</label>
+                <input type="text" v-model="data.USER_type_identification" placeholder="CC, CI, DUI, DNI, ID"
+                required>
+            </div>
+            <div class="field">
+                <label for="">Nº Identificación</label>
+                <input type="text" v-model="data.USER_identification" placeholder=""
+                required>
+            </div>
+            <div class="field">
+                <label for="">Fecha de nacimiento</label>
+                <input type="date" v-model="data.USER_birthday" placeholder=""
                 required>
             </div>
             <div class="field">
@@ -36,21 +46,12 @@
                 </div>
             </div>
             <div class="field">
-                <label for="">Tipo de identificación</label>
-                <input type="text" v-model="data.USER_type_identification" placeholder="CC, CI, DUI, DNI, ID"
-                    required>
+                <label for="">Correo electrónico</label>
+                <input type="text" v-model="data.USER_email" placeholder=""
+                required>
             </div>
-            <div class="field">
-                <label for="">Nº Identificación</label>
-                <input type="text" v-model="data.USER_identification" placeholder=""
-                    required>
-            </div>
-            <div class="field">
-                <label for="">Fecha de nacimiento</label>
-                <input type="date" v-model="data.USER_birthday" placeholder=""
-                    required>
-            </div>
-            <div class="field">
+            
+            <div class="field checkbox">
                 <input type="checkbox" required>
                 <legend>Acepto <strong>recibir información por correo electrónico de Chikara Organización.</strong></legend>
             </div>

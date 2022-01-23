@@ -16,6 +16,17 @@ define([
 
 		},
 		methods: {
+			openLink(media){
+				if(media === 'fb'){
+					window.open('https://www.facebook.com/ChikaraOficial', '_blank')
+				}
+				if(media === 'ig'){
+					window.open('https://www.instagram.com/chikaraoficial/', '_blank')
+				}
+				if(media === 'yt'){
+					window.open('https://www.youtube.com/channel/UCG51dRdn45UfK58rMeqrCPw', '_blank')
+				}
+			}
 
 		},
 		created() {

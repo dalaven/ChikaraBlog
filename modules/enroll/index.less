@@ -70,6 +70,12 @@
                     flex-direction: column;
                 }
 
+                &.checkbox{
+                    @media @mobile {
+                        flex-direction: row;
+                    }   
+                }
+
                 label {
                     font-family: Cousine;
                     font-style: normal;
@@ -125,7 +131,8 @@
                 }
 
                 input[type="checkbox"] {
-
+                    width: 50px;
+                    
                     +legend {
                         margin: 15px 0;
                     }
