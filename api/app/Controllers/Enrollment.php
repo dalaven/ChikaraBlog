@@ -79,9 +79,9 @@ class Enrollment extends BaseController
                     <a href="https://www.youtube.com/channel/UCG51dRdn45UfK58rMeqrCPw" target="_blank"><img
                             src="http://chikaraoficial.org/res/images/youtube.svg" width="50"></a></div></div></div>';
             $email = \Config\Services::email();
-            $email->setFrom('matriculas@chikaraoficial.org', 'Pre-inscripción chikara');
+            $email->setFrom('matriculas@chikaraoficial.org', 'Chikara Organización');
             $email->setTo($data['USER_email']);
-            $email->setSubject('Asunto');
+            $email->setSubject('Pre-inscripción chikara');
             $email->setMessage($message);
             $email->send();
             $email->printDebugger(['headers']);
