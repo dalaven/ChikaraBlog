@@ -83,6 +83,7 @@ class Enrollment extends BaseController
                 $email->setMessage($message);
                 $email->send();
                 $email->printDebugger(['headers']);
+                $response = true;
             }
 
         } catch (\Exception $e) {

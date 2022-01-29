@@ -35,7 +35,7 @@ define([
 				this.showLoader= true;
 				
 				await api.post('register', this.data).then(result => {
-					if (!result.errors) {
+					if (!result.errors ) {
 						alert('Registro Exitoso, llegará un correo con la confirmación. Por favor revisar el spam')
 					} else {
 						if(result.errors.USER_email){
