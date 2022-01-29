@@ -12,6 +12,7 @@ define([
 			//{ name: "index", path: "/", component: m("index"), meta: { title: '' } },
 			{ name: "home", path: "/", component: m("home/index"), meta: { title: 'Home' } },
 			{ name: "register", path: "/registro", component: m("enroll/index"), meta: { title: 'Inscripción' } },
+			{ name: "register:course", path: "/registro/curso", component: m("enroll/course"), meta: { title: 'Inscripción' } },
 			{ name: "game", path: "/games", component: m("games/index"), meta: { title: 'Juegos' } },
 		]
 	});

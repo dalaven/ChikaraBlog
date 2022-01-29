@@ -33,6 +33,9 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/listUsers', 'Enrollment::index');
 $routes->post('/register', 'Enrollment::register');
+$routes->get('/getCourses', 'Enrollment::getCourses');
+$routes->post('/searchUser', 'Enrollment::searchUser');
+$routes->post('/saveCourse', 'Enrollment::saveCourse');
 
 /**
  * --------------------------------------------------------------------

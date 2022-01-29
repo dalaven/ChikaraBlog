@@ -1,0 +1,169 @@
+#register-course-view {
+    @menu-height : 120px;
+    position: relative;
+    height: calc(100% - @menu-height);
+
+    .container-register {
+        background-color: #C92121;
+        padding-top: @menu-height;
+        height: auto;
+        position: relative;
+        background-image: url('../../res/images/home-back.png');
+        background-repeat: no-repeat;
+
+        background-size: auto 100vh;
+        background-position: 0 0;
+
+
+        background-size: auto;
+        width: 100%;
+        height: 100%;
+        display: grid;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            mix-blend-mode: multiply;
+        }
+
+        &::before {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        &::after {
+            background-color: #C92121;
+        }
+
+        .search {
+            z-index: 10;
+            margin-top: 25px;
+            max-width: 500px;
+            padding: 50px 30px 40px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border-radius: 5px;
+            display: inline-grid;
+            width: inherit;
+            margin: auto;
+
+            @media @mobile {
+                width: calc(100vw - 60px);
+                margin: 50px auto;
+            }
+
+            img {
+                place-self: center;
+                margin-bottom: 20px;
+            }
+
+            .field {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 10px;
+
+                @media @mobile {
+                    flex-direction: column;
+                }
+
+                &.checkbox{
+                    @media @mobile {
+                        flex-direction: row;
+                    }   
+                }
+
+                label {
+                    font-family: Cousine;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 17px;
+                    line-height: 19px;
+                    width: 200px;
+                    text-align: center;
+
+                    @media @mobile {
+                        width: inherit;
+                    }
+                }
+
+                label+input,
+                label+select,
+                label+.phone {
+                    margin: 15px 0;
+                }
+
+                input,
+                select {
+                    border-radius: 5px;
+                    padding: 10px;
+                    border: 0;
+                    flex: auto;
+
+                    @media @mobile {
+                        width: -webkit-fill-available;
+                    }
+                }
+
+                select {
+                    max-width: 290px;
+
+                    @media @mobile {
+                        max-width: calc(100vw - 60px);
+                    }
+                }
+
+                .phone {
+                    display: flex;
+                    gap: 10px;
+                    flex: auto;
+
+                    @media @mobile {
+                        width: -webkit-fill-available;
+                    }
+
+                    .indicative {
+                        max-width: 60px;
+                    }
+                }
+
+                input[type="checkbox"] {
+                    width: 50px;
+                    
+                    +legend {
+                        margin: 15px 0;
+                    }
+                }
+
+            }
+
+            footer {
+                text-align: center;
+
+                button {
+                    cursor: pointer;
+                    background: #000000;
+                    border-radius: 5px;
+                    padding: 12px 50px;
+                    border: 0;
+
+                    font-family: Cousine;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 24px;
+                    line-height: 27px;
+                    text-align: center;
+
+                    color: #FFFFFF;
+                }
+            }
+
+        }
+
+
+    }
+}
