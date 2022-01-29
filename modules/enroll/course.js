@@ -31,15 +31,17 @@ define([
 				if(!this.data.USER_valid){
 					await api.post('searchUser', this.data).then(result => {				
 						this.data.USER_valid = result;
+						if(!this.data.USER_valid){
+							alert("Los datos ingresados no coinciden con algún pre registro")
+						}
 						this.showLoader = false;
 					}).catch(error => {
 						this.showLoader = false;
 					})
 				} else {
 					await api.post('saveCourse', this.data).then(result => {				
-						this.data.USER_valid = result;
 						this.showLoader = false;
-						alert("error")
+						alert("Tu inscripción a nuestros cursos a sido satisfactoria.")
 					}).catch(error => {
 						this.showLoader = false; this.resetForm()
 					})

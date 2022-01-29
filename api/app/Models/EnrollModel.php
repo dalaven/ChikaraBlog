@@ -5,7 +5,7 @@ namespace App\Models;
 use App\Entities\Enroll;
 use App\Models\ORMModel;
 
-class CourseModel extends ORMModel
+class EnrollModel extends ORMModel
 {
     protected $table = 'enrollments';
     protected $prefixField = 'NRMT';

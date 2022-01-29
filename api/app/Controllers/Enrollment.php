@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\UserModel;
 use App\Models\CourseModel;
-
+use App\Models\EnrollModel;
 
 class Enrollment extends BaseController
 {
@@ -18,10 +18,11 @@ class Enrollment extends BaseController
     {
         return json_encode($this->userModel->findAll());
     }
-    
-    public function getCourses($available = 1){
+
+    public function getCourses($available = 1)
+    {
         $course = new CourseModel();
-        
+
         $courses = $course->findAll();
         return json_encode($courses);
     }
@@ -85,7 +86,6 @@ class Enrollment extends BaseController
                 $email->printDebugger(['headers']);
                 $response = true;
             }
-
         } catch (\Exception $e) {
             $response['error'] = $e->getMessage();
         }
@@ -98,24 +98,96 @@ class Enrollment extends BaseController
     {
         $data = $this->request->getJSON(true);
 
-       /* try {
-            if (!$this->userModel->save($data)) {
-                $response['errors'] = $this->userModel->validation->getErrors();
-            } else {
-                $message = '';
+        $course = new CourseModel();
+
+        $course = $course->find($data['USER_course']);
+
+        $messageLink = "";
+
+        if ($course->COUR_PK == 1) {
+            $messageLink = '<p>(TEMA: katakana) Horario: 8:00 P.M. – 10:00 P.M </p>
+            <div style="flex: auto; display: flex; gap: 10px; margin: auto; justify-content: center;">
+            <a href="https://chat.whatsapp.com/BDu7BXORAQsFAqsVzEsRGr" target="_blank"><button style=" background-color: green; font-size: 30px; color: white; margin: 10px; gap: 10px; border-radius: 15px; border: azure;">¡¡click aqui!!</button></a>
+            </div>';
+        }
+
+
+        if ($course->COUR_PK == 2) {
+            $messageLink = '<p>(TEMA: hiragana) Horario: 6:00 P.M. – 8:00 P.M </p>
+            <div style=" flex: auto; display: flex; gap: 10px; margin: auto; justify-content: center; ">
+            <a href="https://chat.whatsapp.com/KZvpSWAf1jaIq6OxSNSqOD" target="_blank"><button style=" background-color: green; font-size: 30px; color: white; margin: 10px; gap: 10px; border-radius: 15px; border: azure;">¡¡click aqui!!</button></a>
+            </div>';
+        }
+
+        if ($course->COUR_PK == 3) {
+            $messageLink = '<p>(TEMA: kanji) Horario: 6:00 P.M. – 8:00 P.M </p>
+            <div style=" flex: auto; display: flex; gap: 10px; margin: auto; justify-content: center; ">
+                    <a href="https://chat.whatsapp.com/HERpE2qeBSeFx0EzCuDIks" target="_blank"><button style=" background-color: green;font-size: 30px;color: white;margin: 10px;gap: 10px;border-radius: 15px;border: azure;">¡¡click aqui!!</button></a>
+                </div>';
+        }
+
+        if ($course->COUR_PK == 4) {
+            $messageLink = '<p>(TEMA: Avanzado 2 - gramatica) Horario: 6:00 P.M. – 8:00 P.M </p>
+            <div style="flex: auto;display: flex;gap: 10px;margin: auto;justify-content: center;">
+            <a href="https://chat.whatsapp.com/C5dyjcsqRs5Bd07oUjbY6R" target="_blank"><button style="background-color: green;font-size: 30px;color: white;margin: 10px;gap: 10px;border-radius: 15px;border: azure;">¡¡click aqui!!</button></a>
+            </div>';
+        }
+        if ($course->COUR_PK == 5) {
+            $messageLink = '<p>(TEMA: Avanzado 1 - practicas) Horario: 8:00 P.M. – 10:00 P.M </p>
+            <div style=" flex: auto; display: flex; gap: 10px; margin: auto; justify-content: center;">
+            <a href="https://chat.whatsapp.com/EvqQ01dXQID9nswIAgwflu" target="_blank"><button style=" background-color: green; font-size: 30px; color: white; margin: 10px; gap: 10px; border-radius: 15px; border: azure;">¡¡click aqui!!</button></a>
+            </div>';
+        }
+
+        $dataFormat = [
+            'NRMT_user' => intval($data['USER_valid']),
+            'NRMT_course'    => intval($data['USER_course']),
+        ];
+
+        $enroll = new EnrollModel();
+
+
+
+        try {
+            if ($enroll->save($dataFormat)) {
+                $message = '<div style=" max-width: 600px; margin: auto; border: black solid 1px; border-radius: 5px; padding: 15px; ">
+                        <div class="" style=" display: flex; align-items: center; ">
+                        <img src="http://chikaraoficial.org/res/images/chikara_logo.png" width="124">
+                    <h1 style=" flex: auto; text-align: center;">
+                    ようこそ!!
+                    </h1>
+                    </div>
+                    <div>
+                    <p></p>
+                    <h4 style="text-align: center;">Reciba un cordial saludo de la organización Chikara</h4>
+                    <p></p>
+                    <p></p>
+                    <h4 style="text-align: justify;">
+                    Gracias por inscribirte al curso'.$course->COUR_name.', te esperamos este sábado 5 de febrero del 2022 para tomar tu primera
+                    clase. <br>
+                        Recuerda que los horarios en este correo están basados en la hora Colombia (GMT-5), por lo cual tienes que
+                        validar la diferencia horaria.<br>
+                        Para el manejo del grupo es necesario unirse al siguiente grupo de WhatsApp, este grupo funcionara para el
+                        manejo interno del grupo (horario de clase, dudas, inquietudes, sugerencias)
+                        </h4>
+                        <p></p>
+                        <p></p>
+                        <h3 style=" font-weight: 900;">PARA UNIRTE AL GRUPO DE WHATSAPP DA CLICK EN EL SIGUIENTE BOTON:</h3>
+                        ' .$messageLink.'
+                        </div>
+                        </div>';
                 $email = \Config\Services::email();
                 $email->setFrom('matriculas@chikaraoficial.org', 'Chikara Organización');
                 $email->setTo($data['USER_email']);
-                $email->setSubject('Pre-inscripción chikara');
+                $email->setSubject('Inscripción curso chikara');
                 $email->setMessage($message);
                 $email->send();
                 $email->printDebugger(['headers']);
+                $response = true;
             }
-
         } catch (\Exception $e) {
             $response['error'] = $e->getMessage();
-        }*/
-        $response["errors"]='Error';
+        }
         return json_encode($response);
     }
 }
