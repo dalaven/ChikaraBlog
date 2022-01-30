@@ -45,7 +45,7 @@ define([
 						} else  if(result.noRegister){
 							alert("Ya existe un registro para este usuario.")
 						} else {
-							alert("Tu inscripción a nuestros cursos a sido satisfactoria.")
+							alert("Tu inscripción al curso a sido satisfactoria, por favor revisa tu correo.")
 						}
 						this.showLoader = false;
 						this.resetForm()
