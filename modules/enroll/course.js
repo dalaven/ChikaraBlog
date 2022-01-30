@@ -39,9 +39,16 @@ define([
 						this.showLoader = false;
 					})
 				} else {
-					await api.post('saveCourse', this.data).then(result => {				
+					await api.post('saveCourse', this.data).then(result => {
+						if(result.error){
+							alert("Ha ocurrido un error, contacta a algún administrativo")
+						} else  if(result.noRegister){
+							alert("Ya existe un registro para este usuario.")
+						} else {
+							alert("Tu inscripción a nuestros cursos a sido satisfactoria.")
+						}
 						this.showLoader = false;
-						alert("Tu inscripción a nuestros cursos a sido satisfactoria.")
+						this.resetForm()
 					}).catch(error => {
 						this.showLoader = false; this.resetForm()
 					})

@@ -147,12 +147,14 @@ class Enrollment extends BaseController
         $enroll = new EnrollModel();
 
 
+        $validOneEnroll = $enroll->where('NRMT_user', $data['USER_valid'])->findAll();
 
-        try {
-            if ($enroll->save($dataFormat)) {
-                $message = '<div style=" max-width: 600px; margin: auto; border: black solid 1px; border-radius: 5px; padding: 15px; ">
-                        <div class="" style=" display: flex; align-items: center; ">
-                        <img src="http://chikaraoficial.org/res/images/chikara_logo.png" width="124">
+        if (count($validOneEnroll) === 0) {
+            try {
+                if ($enroll->save($dataFormat)) {
+                    $message = '<div style=" max-width: 600px; margin: auto; border: black solid 1px; border-radius: 5px; padding: 15px; ">
+                    <div class="" style=" display: flex; align-items: center; ">
+                    <img src="http://chikaraoficial.org/res/images/chikara_logo.png" width="124">
                     <h1 style=" flex: auto; text-align: center;">
                     ようこそ!!
                     </h1>
@@ -163,30 +165,33 @@ class Enrollment extends BaseController
                     <p></p>
                     <p></p>
                     <h4 style="text-align: justify;">
-                    Gracias por inscribirte al curso'.$course->COUR_name.', te esperamos este sábado 5 de febrero del 2022 para tomar tu primera
+                    Gracias por inscribirte al curso ' . $course->COUR_name . ', te esperamos este sábado 5 de febrero del 2022 para tomar tu primera
                     clase. <br>
-                        Recuerda que los horarios en este correo están basados en la hora Colombia (GMT-5), por lo cual tienes que
-                        validar la diferencia horaria.<br>
-                        Para el manejo del grupo es necesario unirse al siguiente grupo de WhatsApp, este grupo funcionara para el
-                        manejo interno del grupo (horario de clase, dudas, inquietudes, sugerencias)
-                        </h4>
-                        <p></p>
-                        <p></p>
-                        <h3 style=" font-weight: 900;">PARA UNIRTE AL GRUPO DE WHATSAPP DA CLICK EN EL SIGUIENTE BOTON:</h3>
-                        ' .$messageLink.'
-                        </div>
-                        </div>';
-                $email = \Config\Services::email();
-                $email->setFrom('matriculas@chikaraoficial.org', 'Chikara Organización');
-                $email->setTo($data['USER_email']);
-                $email->setSubject('Inscripción curso chikara');
-                $email->setMessage($message);
-                $email->send();
-                $email->printDebugger(['headers']);
-                $response = true;
+                    Recuerda que los horarios en este correo están basados en la hora Colombia (GMT-5), por lo cual tienes que
+                    validar la diferencia horaria.<br>
+                    Para el manejo del grupo es necesario unirse al siguiente grupo de WhatsApp, este grupo funcionara para el
+                    manejo interno del grupo (horario de clase, dudas, inquietudes, sugerencias)
+                    </h4>
+                    <p></p>
+                    <p></p>
+                    <h3 style=" font-weight: 900;">PARA UNIRTE AL GRUPO DE WHATSAPP DA CLICK EN EL SIGUIENTE BOTON:</h3>
+                    ' . $messageLink . '
+                    </div>
+                    </div>';
+                    $email = \Config\Services::email();
+                    $email->setFrom('matriculas@chikaraoficial.org', 'Chikara Organización');
+                    $email->setTo($data['USER_email']);
+                    $email->setSubject('Inscripción curso chikara');
+                    $email->setMessage($message);
+                    $email->send();
+                    $email->printDebugger(['headers']);
+                    $response['suscribe']="Ya inscrito";
+                }
+            } catch (\Exception $e) {
+                $response['error'] = $e->getMessage();
             }
-        } catch (\Exception $e) {
-            $response['error'] = $e->getMessage();
+        } else {
+            $response['noRegister'] = "Ya existe una inscripción";
         }
         return json_encode($response);
     }

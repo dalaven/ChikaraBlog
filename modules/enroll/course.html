@@ -8,11 +8,11 @@
             <h1> Utiliza tus datos ingresados en el preregistro</h1>
             <div class="field">
                 <label for="">Nº Identificación</label>
-                <input type="text" v-model="data.USER_identification" placeholder="" required>
+                <input type="text" v-model="data.USER_identification" placeholder="" required :disabled="data.USER_valid">
             </div>
             <div class="field">
                 <label for="">Correo electrónico</label>
-                <input type="text" v-model="data.USER_email" placeholder=""
+                <input type="text" v-model="data.USER_email" placeholder="" :disabled="data.USER_valid"
                 required>
             </div>
             <template v-if="data.USER_valid">
