@@ -149,7 +149,7 @@ class Enrollment extends BaseController
 
         $validOneEnroll = $enroll->where('NRMT_user', $data['USER_valid'])->findAll();
 
-        if (count($validOneEnroll) === 0) {
+        if (count($validOneEnroll) === 0 || $data['USER_admin']) {
             try {
                 if ($enroll->save($dataFormat)) {
                     $message = '<div style=" max-width: 600px; margin: auto; border: black solid 1px; border-radius: 5px; padding: 15px; ">

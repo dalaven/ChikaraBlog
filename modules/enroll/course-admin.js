@@ -17,7 +17,7 @@ define([
 					USER_identification: "",
 					USER_email: "",
 					USER_valid: false,
-					USER_admin: false,
+					USER_admin: true,
 				},
 				courses:[ ]
 				
