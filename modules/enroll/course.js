@@ -64,7 +64,6 @@ define([
 		},
 		async created() {
 			this.courses = await api.get('getCourses')
-
 		},
 	};
 });

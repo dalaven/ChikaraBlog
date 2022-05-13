@@ -1,6 +1,7 @@
 #register-view {
     @menu-height : 120px;
     position: relative;
+    height: calc(100% - @menu-height);
 
     .container-register {
         background-color: #C92121;
@@ -132,6 +133,7 @@
 
                 input[type="checkbox"] {
                     width: 50px;
+                    flex: inherit;
                     
                     +legend {
                         margin: 15px 0;

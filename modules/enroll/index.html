@@ -1,69 +1,85 @@
 <section id="register-view">
     <Menu></Menu>
     <div class="container-register">
-        
-        <form @submit.prevent="sendRegister" class="register">
+        <form class="register" @submit.prevent="next">
             <img src="res/images/neko.png" alt="">
-            
-            <div class="field">
-                <label for="">Nombre</label>
-                <input type="text" v-model="data.USER_name" placeholder=""
-                required>
-            </div>
-            <div class="field">
-                <label for="">Apellido</label>
-                <input type="text" v-model="data.USER_lastname" placeholder=""
-                required>
-            </div>
-            <div class="field">
-                <label for="">Tipo de identificación</label>
-                <input type="text" v-model="data.USER_type_identification" placeholder="CC, CI, DUI, DNI, ID"
-                required>
-            </div>
-            <div class="field">
-                <label for="">Nº Identificación</label>
-                <input type="text" v-model="data.USER_identification" placeholder=""
-                required>
-            </div>
-            <div class="field">
-                <label for="">Fecha de nacimiento</label>
-                <input type="date" v-model="data.USER_birthday" placeholder=""
-                required>
-            </div>
-            <div class="field">
-                <label for="">País</label>
-                <select v-model="data.USER_country" @change="setIndicative()" required>
-                    <option v-for="c in countries" :value="c.value">{{c.name}}</option>
-                </select>
-            </div>
-            <div class="field">
-                <label for="">Celular</label>
-                <div class="phone">
-                    <input type="text"  class="indicative" v-model="data.USER_indicative" placeholder=""
-                    required disabled>
-                    <input type="text" class="number"  v-model="data.USER_phone" placeholder=""
-                    required>
+
+
+            <section class="step-1" v-if="step === STEP_REGISTER">
+                <div class="field checkbox">
+                    <input type="checkbox" v-model="isOld">
+                    <legend><strong>Ya me registre anteriormente.</strong></legend>
                 </div>
-            </div>
-            <div class="field">
-                <label for="">Correo electrónico</label>
-                <input type="text" v-model="data.USER_email" placeholder=""
-                required>
-            </div>
-            
-            <div class="field checkbox">
-                <input type="checkbox" required>
-                <legend>Acepto <strong>recibir información por correo electrónico de Chikara Organización.</strong></legend>
-            </div>
+
+                <div class="field" v-if="!isOld">
+                    <label for="">Nombre</label>
+                    <input type="text" v-model="data.USER_name" placeholder="" required>
+                </div>
+                <div class="field" v-if="!isOld">
+                    <label for="">Apellido</label>
+                    <input type="text" v-model="data.USER_lastname" placeholder="" required>
+                </div>
+                <div class="field" v-if="!isOld">
+                    <label for="">Tipo de identificación</label>
+                    <input type="text" v-model="data.USER_type_identification" placeholder="CC, CI, DUI, DNI, ID"
+                        required>
+                </div>
+                <div class="field">
+                    <label for="">Nº Identificación</label>
+                    <input type="text" v-model="data.USER_identification" placeholder="" required>
+                </div>
+                <div class="field" v-if="!isOld">
+                    <label for="">Fecha de nacimiento</label>
+                    <input type="date" v-model="data.USER_birthday" placeholder="" required>
+                </div>
+                <div class="field" v-if="!isOld">
+                    <label for="">País</label>
+                    <select v-model="data.USER_country" @change="setIndicative()" required>
+                        <option v-for="c in countries" :value="c.value">{{c.name}}</option>
+                    </select>
+                </div>
+                <div class="field" v-if="!isOld">
+                    <label for="">Celular</label>
+                    <div class="phone">
+                        <input type="text" class="indicative" v-model="data.USER_indicative" placeholder="" required
+                            disabled>
+                        <input type="text" class="number" v-model="data.USER_phone" placeholder="" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="">Correo electrónico</label>
+                    <input type="text" v-model="data.USER_email" placeholder="" required>
+                </div>
+
+                <div class="field checkbox" v-if="!isOld">
+                    <input type="checkbox" required>
+                    <legend>Acepto <strong>recibir información por correo electrónico de Chikara Organización.</strong>
+                    </legend>
+                </div>
+            </section>
+            <section class="step-2" v-if="step === STEP_COURSE">
+                <template v-if="USER_valid">
+                    <h1>Selecciona uno de los siguientes cursos</h1>
+                    <div class="field">
+                        <label for="">Curso</label>
+                        <select v-model="data.USER_course" required>
+                            <option v-for="c in courses" :value="c.COUR_PK">{{c.COUR_description}}</option>
+                        </select>
+                    </div>
+                </template>
+            </section>
             <footer>
-                <button>
-                    REGISTARSE
+                <button @click.prevent="next" v-if="step === STEP_REGISTER">
+                    CONTINUAR
+                </button>
+                <button v-if="step === STEP_COURSE">
+                    GUARDAR
                 </button>
             </footer>
-            
+
 
         </form>
 
     </div>
-    <Loader v-if="showLoader"/>
+    <Loader v-if="showLoader" />
 </section>
