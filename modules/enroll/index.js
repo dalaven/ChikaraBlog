@@ -84,9 +84,9 @@ define([
 						} else {
 							alert("Se ha presentado un error, intente nuevamente")
 						}
+						this.resetForm()
 					}
 					this.showLoader = false;
-					this.resetForm()
 				}).catch(error => {
 					this.showLoader = false; this.resetForm()
 				})
