@@ -94,20 +94,20 @@ class Enrollment extends BaseController
         }
 
         if ($course->COUR_PK == 9) {
-            $messageLink = '<p>(TEMA: Gramatica) Horario: 6:00 P.M. – 8:00 P.M </p>
+            $messageLink = '<p>(TEMA: Gramatica) Horario: 8:00 P.M. – 10:00 P.M </p>
             <div style="flex: auto;display: flex;gap: 10px;margin: auto;justify-content: center;">
             <a href="https://chat.whatsapp.com/C5dyjcsqRs5Bd07oUjbY6R" target="_blank"><button style="background-color: green;font-size: 30px;color: white;margin: 10px;gap: 10px;border-radius: 15px;border: azure;">¡¡click aqui!!</button></a>
             </div>';
         }
         if ($course->COUR_PK == 10) {
-            $messageLink = '<p>(TEMA: Coreano) Horario: 8:00 P.M. – 10:00 P.M </p>
+            $messageLink = '<p>(TEMA: Coreano I) Horario: 5:00 P.M. – 7:00 P.M </p>
             <div style=" flex: auto; display: flex; gap: 10px; margin: auto; justify-content: center;">
             <a href="https://chat.whatsapp.com/EvqQ01dXQID9nswIAgwflu" target="_blank"><button style=" background-color: green; font-size: 30px; color: white; margin: 10px; gap: 10px; border-radius: 15px; border: azure;">¡¡click aqui!!</button></a>
             </div>';
         }
 
         if ($course->COUR_PK == 11) {
-            $messageLink = '<p>(TEMA: Frances) Horario: 8:00 P.M. – 10:00 P.M </p>
+            $messageLink = '<p>(TEMA: Francés I) Horario: 8:00 P.M. – 10:00 P.M </p>
             <div style=" flex: auto; display: flex; gap: 10px; margin: auto; justify-content: center;">
             <a href="https://chat.whatsapp.com/EvqQ01dXQID9nswIAgwflu" target="_blank"><button style=" background-color: green; font-size: 30px; color: white; margin: 10px; gap: 10px; border-radius: 15px; border: azure;">¡¡click aqui!!</button></a>
             </div>';
@@ -139,7 +139,7 @@ class Enrollment extends BaseController
                     <p></p>
                     <p></p>
                     <h4 style="text-align: justify;">
-                    Gracias por inscribirte al curso ' . $course->COUR_name . ', te esperamos este sábado 5 de febrero del 2022 para tomar tu primera
+                    Gracias por inscribirte al curso ' . $course->COUR_name . ', te esperamos este sábado 21 de mayo del 2022 para tomar tu primera
                     clase. <br>
                     Recuerda que los horarios en este correo están basados en la hora Colombia (GMT-5), por lo cual tienes que
                     validar la diferencia horaria con tu país.<br>
