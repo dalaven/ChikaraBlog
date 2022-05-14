@@ -17,16 +17,16 @@ define([
 				showLoader: false,
 				isOld: false,
 				data:{
-					USER_identification: "",
-					USER_type_identification: "",
-					USER_name: "",
-					USER_lastname: "",
-					USER_indicative: "",
-					USER_phone: "",
-					USER_country: "",
-					USER_birthday: "",
-					USER_email: "",
-					USER_course: "",
+					USER_identification: null,
+					USER_type_identification: null,
+					USER_name: null,
+					USER_lastname: null,
+					USER_indicative: null,
+					USER_phone: null,
+					USER_country: null,
+					USER_birthday: null,
+					USER_email: null,
+					USER_course: null,
 				},
 
 				step: 1,
@@ -54,6 +54,7 @@ define([
 				}
 			},
 			async saveCourse(){
+				this.showLoader= true;
 				await api.post('saveCourse', this.data).then(result => {
 					if(result.error){
 						alert("Ha ocurrido un error, contacta a algún administrativo")
@@ -96,17 +97,23 @@ define([
 				this.data.USER_indicative =  "+" + cities.find( c => c.iso2 === this.data.USER_country)?.dialCode?? ""
 			},
 			resetForm(){
-				this.data.USER_identification = ""
-				this.data.USER_type_identification = ""
-				this.data.USER_name = ""
-				this.data.USER_lastname = ""
-				this.data.USER_indicative = ""
-				this.data.USER_phone = ""
-				this.data.USER_country = ""
-				this.data.USER_birthday = ""
-				this.data.USER_email =  ""
+				this.data.USER_PK = null
+				this.data.USER_course = null
+				this.data.USER_identification = null
+				this.data.USER_type_identification = null
+				this.data.USER_name = null
+				this.data.USER_lastname = null
+				this.data.USER_indicative = null
+				this.data.USER_phone = null
+				this.data.USER_country = null
+				this.data.USER_birthday = null
+				this.data.USER_email =  null
+
+				this.step = this.STEP_REGISTER
+
 			},
 			async validRegister(){
+				this.showLoader= true;
 				await api.post('searchUser', this.data).then(result => {				
 					this.USER_valid = true;
 					this.data.USER_PK = result
