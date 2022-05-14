@@ -76,6 +76,7 @@ define([
 						//alert('Registro Exitoso, llegará un correo con la confirmación. Por favor revisar el spam')
 						this.data.USER_PK = result
 						this.USER_valid = true
+						this.step =  this.STEP_COURSE
 					} else {
 						if(result.errors.USER_email){
 							alert('El correo ya se encuentra inscrito')
