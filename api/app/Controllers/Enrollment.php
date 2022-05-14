@@ -71,7 +71,7 @@ class Enrollment extends BaseController
 
         $messageLink = "";
 
-        if ($course->COUR_PK == 1) {
+        if ($course->COUR_PK == 6) {
             $messageLink = '<p>(TEMA: katakana) Horario: 8:00 P.M. – 10:00 P.M </p>
             <div style="flex: auto; display: flex; gap: 10px; margin: auto; justify-content: center;">
             <a href="https://chat.whatsapp.com/BDu7BXORAQsFAqsVzEsRGr" target="_blank"><button style=" background-color: green; font-size: 30px; color: white; margin: 10px; gap: 10px; border-radius: 15px; border: azure;">¡¡click aqui!!</button></a>
@@ -79,28 +79,35 @@ class Enrollment extends BaseController
         }
 
 
-        if ($course->COUR_PK == 2) {
+        if ($course->COUR_PK == 7) {
             $messageLink = '<p>(TEMA: hiragana) Horario: 6:00 P.M. – 8:00 P.M </p>
             <div style=" flex: auto; display: flex; gap: 10px; margin: auto; justify-content: center; ">
             <a href="https://chat.whatsapp.com/KZvpSWAf1jaIq6OxSNSqOD" target="_blank"><button style=" background-color: green; font-size: 30px; color: white; margin: 10px; gap: 10px; border-radius: 15px; border: azure;">¡¡click aqui!!</button></a>
             </div>';
         }
 
-        if ($course->COUR_PK == 3) {
+        if ($course->COUR_PK == 8) {
             $messageLink = '<p>(TEMA: kanji) Horario: 6:00 P.M. – 8:00 P.M </p>
             <div style=" flex: auto; display: flex; gap: 10px; margin: auto; justify-content: center; ">
                     <a href="https://chat.whatsapp.com/HERpE2qeBSeFx0EzCuDIks" target="_blank"><button style=" background-color: green;font-size: 30px;color: white;margin: 10px;gap: 10px;border-radius: 15px;border: azure;">¡¡click aqui!!</button></a>
                 </div>';
         }
 
-        if ($course->COUR_PK == 4) {
-            $messageLink = '<p>(TEMA: Avanzado 2 - gramatica) Horario: 6:00 P.M. – 8:00 P.M </p>
+        if ($course->COUR_PK == 9) {
+            $messageLink = '<p>(TEMA: Gramatica) Horario: 6:00 P.M. – 8:00 P.M </p>
             <div style="flex: auto;display: flex;gap: 10px;margin: auto;justify-content: center;">
             <a href="https://chat.whatsapp.com/C5dyjcsqRs5Bd07oUjbY6R" target="_blank"><button style="background-color: green;font-size: 30px;color: white;margin: 10px;gap: 10px;border-radius: 15px;border: azure;">¡¡click aqui!!</button></a>
             </div>';
         }
-        if ($course->COUR_PK == 5) {
-            $messageLink = '<p>(TEMA: Avanzado 1 - practicas) Horario: 8:00 P.M. – 10:00 P.M </p>
+        if ($course->COUR_PK == 10) {
+            $messageLink = '<p>(TEMA: Coreano) Horario: 8:00 P.M. – 10:00 P.M </p>
+            <div style=" flex: auto; display: flex; gap: 10px; margin: auto; justify-content: center;">
+            <a href="https://chat.whatsapp.com/EvqQ01dXQID9nswIAgwflu" target="_blank"><button style=" background-color: green; font-size: 30px; color: white; margin: 10px; gap: 10px; border-radius: 15px; border: azure;">¡¡click aqui!!</button></a>
+            </div>';
+        }
+
+        if ($course->COUR_PK == 11) {
+            $messageLink = '<p>(TEMA: Frances) Horario: 8:00 P.M. – 10:00 P.M </p>
             <div style=" flex: auto; display: flex; gap: 10px; margin: auto; justify-content: center;">
             <a href="https://chat.whatsapp.com/EvqQ01dXQID9nswIAgwflu" target="_blank"><button style=" background-color: green; font-size: 30px; color: white; margin: 10px; gap: 10px; border-radius: 15px; border: azure;">¡¡click aqui!!</button></a>
             </div>';
