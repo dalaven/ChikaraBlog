@@ -33,7 +33,7 @@ define([
 				STEP_REGISTER: 1,
 				STEP_COURSE: 2,
 
-				USER_valid:null
+				USER_valid:false
 			};
 		},
 		computed: {
@@ -43,7 +43,7 @@ define([
 				switch (this.step) {
 					case this.STEP_REGISTER:
 						this.validRegister();
-						if(this.USER_valid != null){
+						if(this.USER_valid){
 							this.step =  this.STEP_COURSE
 						}
 						break;
@@ -133,7 +133,7 @@ define([
 						// el registro validará el usuario
 					} else { //si es nuevo y el usuario ya existe
 						alert("Los datos ingresados ya existen")
-						this.USER_valid = null;
+						this.USER_valid = false;
 					}
 				}
 			}
