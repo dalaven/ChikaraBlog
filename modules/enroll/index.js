@@ -44,6 +44,7 @@ define([
 					case this.STEP_REGISTER:
 						await this.validRegister();
 						if(this.USER_valid){
+							console.log("OK")
 							this.step =  this.STEP_COURSE
 						}
 						break;
@@ -89,7 +90,7 @@ define([
 				}).catch(error => {
 					this.showLoader = false; this.resetForm()
 				})
-
+				
 			},
 			setIndicative(){
 				this.data.USER_indicative =  "+" + cities.find( c => c.iso2 === this.data.USER_country)?.dialCode?? ""
@@ -107,7 +108,8 @@ define([
 			},
 			async validRegister(){
 				await api.post('searchUser', this.data).then(result => {				
-					this.USER_valid = result;
+					this.USER_valid = true;
+					this.data.USER_PK = result
 					this.showLoader = false;
 				}).catch(error => {
 					this.showLoader = false;
