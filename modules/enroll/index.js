@@ -113,9 +113,11 @@ define([
 			},
 			async validRegister(){
 				this.showLoader= true;
-				await api.post('searchUser', this.data).then(result => {				
-					this.USER_valid = true;
-					this.data.USER_PK = result
+				await api.post('searchUser', this.data).then(result => {
+					if(result){
+						this.USER_valid = true;
+						this.data.USER_PK = result
+					}
 					this.showLoader = false;
 				}).catch(error => {
 					this.showLoader = false;
