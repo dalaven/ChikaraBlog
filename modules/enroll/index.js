@@ -42,9 +42,9 @@ define([
 			async next(){
 				switch (this.step) {
 					case this.STEP_REGISTER:
-						await this.validRegister();
-						if(this.USER_valid){
-							console.log("OK")
+						this.validRegister();
+						if(this.USER_valid != null){
+							console.log(this.USER_valid)
 							this.step =  this.STEP_COURSE
 						}
 						break;

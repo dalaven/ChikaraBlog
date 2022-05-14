@@ -40,7 +40,7 @@ class Enrollment extends BaseController
         if ($result = $this->userModel->where('USER_email', $data['USER_email'])->where('USER_identification', $data['USER_identification'])->first()) {
             return json_encode($result->USER_PK);
         }
-        return json_encode(FALSE);
+        return json_encode(null);
     }
 
     public function register()
