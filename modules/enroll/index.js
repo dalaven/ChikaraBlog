@@ -48,7 +48,7 @@ define([
 						}
 						break;
 					case this.STEP_COURSE:
-						await this.sendRegister();
+						await this.saveCourse();
 						break;
 				}
 			},
