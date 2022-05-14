@@ -69,10 +69,10 @@
                 </template>
             </section>
             <footer>
-                <button @click.prevent="next" v-if="step === STEP_REGISTER">
+                <button v-if="step === STEP_REGISTER">
                     CONTINUAR
                 </button>
-                <button v-if="step === STEP_COURSE">
+                <button @click.prevent="next" v-if="step === STEP_COURSE">
                     GUARDAR
                 </button>
             </footer>
