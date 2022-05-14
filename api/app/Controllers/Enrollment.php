@@ -74,7 +74,7 @@ class Enrollment extends BaseController
         if ($course->COUR_PK == 6) {
             $messageLink = '<p>(TEMA: katakana) Horario: 8:00 P.M. – 10:00 P.M </p>
             <div style="flex: auto; display: flex; gap: 10px; margin: auto; justify-content: center;">
-            <a href="https://chat.whatsapp.com/BDu7BXORAQsFAqsVzEsRGr" target="_blank"><button style=" background-color: green; font-size: 30px; color: white; margin: 10px; gap: 10px; border-radius: 15px; border: azure;">¡¡click aqui!!</button></a>
+            <a href="https://chat.whatsapp.com/KQodNXgnps47JNGhRpgqbs" target="_blank"><button style=" background-color: green; font-size: 30px; color: white; margin: 10px; gap: 10px; border-radius: 15px; border: azure;">¡¡click aqui!!</button></a>
             </div>';
         }
 
@@ -82,14 +82,14 @@ class Enrollment extends BaseController
         if ($course->COUR_PK == 7) {
             $messageLink = '<p>(TEMA: hiragana) Horario: 6:00 P.M. – 8:00 P.M </p>
             <div style=" flex: auto; display: flex; gap: 10px; margin: auto; justify-content: center; ">
-            <a href="https://chat.whatsapp.com/KZvpSWAf1jaIq6OxSNSqOD" target="_blank"><button style=" background-color: green; font-size: 30px; color: white; margin: 10px; gap: 10px; border-radius: 15px; border: azure;">¡¡click aqui!!</button></a>
+            <a href="https://chat.whatsapp.com/Ee2pseLdIVaFKu7WNvaycz" target="_blank"><button style=" background-color: green; font-size: 30px; color: white; margin: 10px; gap: 10px; border-radius: 15px; border: azure;">¡¡click aqui!!</button></a>
             </div>';
         }
 
         if ($course->COUR_PK == 8) {
             $messageLink = '<p>(TEMA: kanji) Horario: 6:00 P.M. – 8:00 P.M </p>
             <div style=" flex: auto; display: flex; gap: 10px; margin: auto; justify-content: center; ">
-                    <a href="https://chat.whatsapp.com/HERpE2qeBSeFx0EzCuDIks" target="_blank"><button style=" background-color: green;font-size: 30px;color: white;margin: 10px;gap: 10px;border-radius: 15px;border: azure;">¡¡click aqui!!</button></a>
+                    <a href="https://chat.whatsapp.com/FSW3JOld4zm7iXCkE6RgKf" target="_blank"><button style=" background-color: green;font-size: 30px;color: white;margin: 10px;gap: 10px;border-radius: 15px;border: azure;">¡¡click aqui!!</button></a>
                 </div>';
         }
 
@@ -102,14 +102,14 @@ class Enrollment extends BaseController
         if ($course->COUR_PK == 10) {
             $messageLink = '<p>(TEMA: Coreano I) Horario: 5:00 P.M. – 7:00 P.M </p>
             <div style=" flex: auto; display: flex; gap: 10px; margin: auto; justify-content: center;">
-            <a href="https://chat.whatsapp.com/EvqQ01dXQID9nswIAgwflu" target="_blank"><button style=" background-color: green; font-size: 30px; color: white; margin: 10px; gap: 10px; border-radius: 15px; border: azure;">¡¡click aqui!!</button></a>
+            <a href="https://chat.whatsapp.com/FiSUDIXkqrYH5CK77OqUGg" target="_blank"><button style=" background-color: green; font-size: 30px; color: white; margin: 10px; gap: 10px; border-radius: 15px; border: azure;">¡¡click aqui!!</button></a>
             </div>';
         }
 
         if ($course->COUR_PK == 11) {
             $messageLink = '<p>(TEMA: Francés I) Horario: 8:00 P.M. – 10:00 P.M </p>
             <div style=" flex: auto; display: flex; gap: 10px; margin: auto; justify-content: center;">
-            <a href="https://chat.whatsapp.com/EvqQ01dXQID9nswIAgwflu" target="_blank"><button style=" background-color: green; font-size: 30px; color: white; margin: 10px; gap: 10px; border-radius: 15px; border: azure;">¡¡click aqui!!</button></a>
+            <a href="https://chat.whatsapp.com/BiCji4RMgrQ0PNTgBqrb5H" target="_blank"><button style=" background-color: green; font-size: 30px; color: white; margin: 10px; gap: 10px; border-radius: 15px; border: azure;">¡¡click aqui!!</button></a>
             </div>';
         }
 
