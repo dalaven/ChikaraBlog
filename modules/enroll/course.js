@@ -16,6 +16,7 @@ define([
 				data:{
 					USER_identification: "",
 					USER_email: "",
+					USER_PK: null,
 					USER_valid: false,
 					USER_admin: false,
 				},
@@ -32,6 +33,7 @@ define([
 				if(!this.data.USER_valid){
 					await api.post('searchUser', this.data).then(result => {				
 						this.data.USER_valid = result;
+						this.data.USER_PK = result
 						if(!this.data.USER_valid){
 							alert("Los datos ingresados no coinciden con algún pre registro")
 						}
@@ -60,6 +62,7 @@ define([
 				this.data.USER_identification = ""
 				this.data.USER_email =  ""
 				this.data.USER_valid =  false
+				this.data.USER_PK = null
 			}
 		},
 		async created() {
