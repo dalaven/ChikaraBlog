@@ -86,17 +86,17 @@ class Enrollment extends BaseController
             </div>';
         }
 
-        if ($course->COUR_PK == 8) {
+        if ($course->COUR_PK == 12) {
             $messageLink = '<p>(TEMA: kanji) Horario: 6:00 P.M. – 8:00 P.M </p>
             <div style=" flex: auto; display: flex; gap: 10px; margin: auto; justify-content: center; ">
                     <a href="https://chat.whatsapp.com/FSW3JOld4zm7iXCkE6RgKf" target="_blank"><button style=" background-color: green;font-size: 30px;color: white;margin: 10px;gap: 10px;border-radius: 15px;border: azure;">¡¡click aqui!!</button></a>
                 </div>';
         }
 
-        if ($course->COUR_PK == 9) {
+        if ($course->COUR_PK == 13) {
             $messageLink = '<p>(TEMA: Gramatica) Horario: 8:00 P.M. – 10:00 P.M </p>
             <div style="flex: auto;display: flex;gap: 10px;margin: auto;justify-content: center;">
-            <a href="https://chat.whatsapp.com/C5dyjcsqRs5Bd07oUjbY6R" target="_blank"><button style="background-color: green;font-size: 30px;color: white;margin: 10px;gap: 10px;border-radius: 15px;border: azure;">¡¡click aqui!!</button></a>
+            <a href="https://chat.whatsapp.com/Gi9wJMQgPeI0TB04Gx6mkX" target="_blank"><button style="background-color: green;font-size: 30px;color: white;margin: 10px;gap: 10px;border-radius: 15px;border: azure;">¡¡click aqui!!</button></a>
             </div>';
         }
         if ($course->COUR_PK == 10) {
